@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_alta: 2014-09-07
+  serie_factura: MyString
+  numero_factura: 
+  comentario: MyText
+
+two:
+  fecha_alta: 2014-09-07
+  serie_factura: MyString
+  numero_factura: 
+  comentario: MyText
