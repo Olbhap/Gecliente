@@ -1,0 +1,46 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+   <div><%= f.label :nif %><br />
+    <%= f.text_field :nif, autocomplete: "off" %></div>
+
+    <div><%= f.label :nombre %><br />
+    	<%= f.text_field :nombre, autocomplete: "off" %></div>
+
+    <div><%= f.label :apellidos %><br />
+    	<%= f.text_field :apellidos, autocomplete: "off" %></div>
+
+    <div><%= f.label :nombre_comercial %><br />
+    	<%= f.text_field :nombre_comercial, autocomplete: "off" %></div>
+
+    <div><%= f.label :telefono %><br />
+    	<%= f.text_field :telefono, autocomplete: "off" %></div>
+
+    <div><%= f.label :fax %><br />
+    	<%= f.text_field :fax, autocomplete: "off" %></div>
+
+    <div><%= f.label :telf_movil %><br />
+    	<%= f.text_field :telf_movil, autocomplete: "off" %></div>
+
+    <div><%= f.label :web %><br />
+    	<%= f.text_field :web, autocomplete: "off" %></div>    	    	
+
+
+
+
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

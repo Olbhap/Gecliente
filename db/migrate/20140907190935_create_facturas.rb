@@ -6,6 +6,9 @@ class CreateFacturas < ActiveRecord::Migration
       t.integer :numero_factura
       t.text :comentario
 
+      ##Asociaciones
+      t.belongs_to :factura
+
       t.timestamps
     end
   end
