@@ -7,12 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  		<div class="container-fluid">				
+			<a class="navbar-brand" href="#">Gefactura</a>
+			<ul class="nav navbar-nav" align="right">
+		        <li><%= link_to "Facturas", facturas_path %></li>
+		        <li><%= link_to "Regístrate", new_usuario_registration_path %></li>
+		        <li><%= link_to "Iniciar Sesión", new_usuario_session_path %></li>
+		        <li><%= link_to "Cerrar Sesión", destroy_usuario_session_path, :method => :delete %></li>
 
-<%= yield %>
+	    	</ul>
+		</div>		
+	</nav>
 
-<p class = "notice"><%= notice %></p>
-<p class = "alert"><%= alert%></p>
+	<div class="container">
+		<%= yield %>
 
+		<p class = "notice"><%= notice %></p>
+		<p class = "alert"><%= alert%></p>
+	</div>
 
 </body>
 </html>

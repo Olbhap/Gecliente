@@ -1,4 +1,4 @@
-<%= form_for(@factura) do |f| %>
+<%= simple_form_for(@factura, html:{class: "form-horizontal"}) do |f| %>
   <% if @factura.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@factura.errors.count, "error") %> prohibited this factura from being saved:</h2>
@@ -11,23 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :fecha_alta %><br>
-    <%= f.date_select :fecha_alta %>
-  </div>
-  <div class="field">
-    <%= f.label :serie_factura %><br>
-    <%= f.text_field :serie_factura %>
-  </div>
-  <div class="field">
-    <%= f.label :numero_factura %><br>
-    <%= f.text_field :numero_factura %>
-  </div>
-  <div class="field">
-    <%= f.label :comentario %><br>
-    <%= f.text_area :comentario %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.input :usuario_id, collection: Usuario.all, label_method: :full_name %>
+  <%= f.input :fecha_alta %>
+
+  <%= f.input :serie_factura %>
+
+  <%= f.input :numero_factura %>
+
+  <%= f.input :comentario %>
+
+
+   
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

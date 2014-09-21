@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916100955) do
+ActiveRecord::Schema.define(version: 20140920162215) do
 
   create_table "facturas", force: true do |t|
     t.date     "fecha_alta"
@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20140916100955) do
     t.text     "comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "usuario_id"
   end
 
-  add_index "facturas", ["user_id"], name: "index_facturas_on_user_id"
+  add_index "facturas", ["usuario_id"], name: "index_facturas_on_usuario_id"
 
   create_table "usuarios", force: true do |t|
     t.string   "nif",                                                 null: false

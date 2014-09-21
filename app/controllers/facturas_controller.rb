@@ -25,6 +25,8 @@ class FacturasController < ApplicationController
   # POST /facturas.json
   def create
     @factura = Factura.new(factura_params)
+    puts "parametros"
+    puts factura_params
 
     respond_to do |format|
       if @factura.save
@@ -65,10 +67,12 @@ class FacturasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_factura
       @factura = Factura.find(params[:id])
+      puts "Id de usuario"
+      puts @factura.usuario_id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def factura_params
-      params.require(:factura).permit(:fecha_alta, :serie_factura, :numero_factura, :comentario)
+      params.require(:factura).permit(:fecha_alta, :serie_factura, :numero_factura, :comentario, :usuario_id)
     end
 end

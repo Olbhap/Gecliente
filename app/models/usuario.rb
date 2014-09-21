@@ -5,4 +5,9 @@ class Usuario < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  #Devuelve el nombre completo del usuario
+  def full_name
+  	nombre + " " + apellidos
+  end
+
 end
