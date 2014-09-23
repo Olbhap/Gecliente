@@ -46,3 +46,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'devise'
 gem 'simple_form'
+gem 'spanish_vat_validators'

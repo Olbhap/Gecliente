@@ -5,9 +5,18 @@ class Usuario < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :nombre, presence: true
+  validates :apellidos, presence: true
+  validates :nif, presence: true,
+  				 uniqueness: true,
+  				 :valid_spanish_vat => true
+
+
   #Devuelve el nombre completo del usuario
   def full_name
   	nombre + " " + apellidos
   end
+
+
 
 end
