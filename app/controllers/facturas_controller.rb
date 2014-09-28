@@ -1,5 +1,6 @@
 class FacturasController < ApplicationController
   before_action :set_factura, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_usuario!
 
   # GET /facturas
   # GET /facturas.json
@@ -67,8 +68,6 @@ class FacturasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_factura
       @factura = Factura.find(params[:id])
-      puts "Id de usuario"
-      puts @factura.usuario_id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

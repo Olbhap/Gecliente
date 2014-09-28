@@ -7,8 +7,19 @@ Rails.application.routes.draw do
    get "login", to: "devise/sessions#new", as: :login
    get "logout", to: "devise/sessions#destroy", as: :logout
 end
+  
+  authenticated :usuario do
+    root to:'facturas#index'
+  end
 
-  root to:'facturas#index'
+  unauthenticated :usuario do
+    devise_scope :usuario do 
+      get "/" => "devise/sessions#new"
+    end
+  end
+
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
