@@ -5,8 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Usuario |</th>
-      <th>Fecha alta |</th>
+      <th>Fecha factura |</th>
       <th> Serie factura |</th>
       <th> Numero factura |</th>
       <th> Comentario</th>
@@ -15,9 +14,8 @@
   </thead>
 
   <tbody>
-    <% @facturas.each do |factura| %>
+    <% current_usuario.facturas.each do |factura| %>
       <tr>
-       <td><%= factura.usuario.full_name %> </td>
         <td><%= factura.fecha_alta %></td>
         <td><%= factura.serie_factura %></td>
         <td><%= factura.numero_factura %></td>

@@ -25,9 +25,8 @@ class FacturasController < ApplicationController
   # POST /facturas
   # POST /facturas.json
   def create
-    @factura = Factura.new(factura_params)
-    puts "parametros"
-    puts factura_params
+    #@factura = Factura.new(factura_params)   #Sin usuario vinculado
+    @factura = current_usuario.facturas.build(factura_params)
 
     respond_to do |format|
       if @factura.save

@@ -13,9 +13,7 @@ end
   end
 
   unauthenticated :usuario do
-    devise_scope :usuario do 
-      get "/" => "devise/sessions#new"
-    end
+    get "/" => "pages#home"    
   end
 
 

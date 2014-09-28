@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <title>Gefisco - Gefactura</title>
+  <title>Random Login Form - CodePen</title>
 
     <style>
 @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
@@ -104,7 +104,7 @@ body{
 	margin-top: 10px;
 }
 
-.login input[type=submit]{
+.login input[type=button]{
 	width: 260px;
 	height: 35px;
 	background: #fff;
@@ -119,11 +119,11 @@ body{
 	margin-top: 10px;
 }
 
-.login input[type=submit]:hover{
+.login input[type=button]:hover{
 	opacity: 0.8;
 }
 
-.login input[type=submit]:active{
+.login input[type=button]:active{
 	opacity: 0.6;
 }
 
@@ -137,7 +137,7 @@ body{
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.login input[type=submit]:focus{
+.login input[type=button]:focus{
 	outline: none;
 }
 
@@ -159,25 +159,16 @@ body{
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>Ge<span>factura</span></div>
+			<div>Site<span>Random</span></div>
 		</div>
 		<br>
 		<div class="login">
-		<%= form_for(:usuario, :url => session_path(:usuario)) do |f| %>
-			<%= f.text_field :email, :placeholder => "Email" %>
-			<%= f.password_field :password, :placeholder => "Password" %>
-			<%= f.submit 'Sign in' %>
-			<br>
-			<%= f.check_box :remember_me %>
-			<%= f.label :remember_me %>
-			<br>
-			<%= link_to "Forgot your password?", new_password_path(:usuario) %>
-		<% end %>
-				
+				<input type="text" placeholder="username" name="user"><br>
+				<input type="password" placeholder="password" name="password"><br>
+				<input type="button" value="Login">
 		</div>
 
-  <script body.src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 
 </body>
 
