@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   devise_for :usuarios
   resources :facturas
 
+  devise_scope :usuario do
+   get "signup", to: "devise/registrations#new", as: :signup
+   get "login", to: "devise/sessions#new", as: :login
+   get "logout", to: "devise/sessions#destroy", as: :logout
+end
+
   root to:'facturas#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
