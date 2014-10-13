@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920162215) do
+ActiveRecord::Schema.define(version: 20141013121231) do
+
+  create_table "clientes", force: true do |t|
+    t.string   "nif"
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "nombre_comercial"
+    t.string   "telefono"
+    t.string   "telf_movil"
+    t.string   "fax"
+    t.string   "email"
+    t.string   "web"
+    t.text     "descripcion"
+    t.string   "imagen"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "usuario_id"
+  end
+
+  add_index "clientes", ["usuario_id"], name: "index_clientes_on_usuario_id"
 
   create_table "facturas", force: true do |t|
     t.date     "fecha_alta"

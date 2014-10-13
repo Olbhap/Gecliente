@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  
   devise_for :usuarios
   resources :facturas
+  resources :clientes
 
   devise_scope :usuario do
    get "signup", to: "devise/registrations#new", as: :signup

@@ -7,7 +7,7 @@ class CreateFacturas < ActiveRecord::Migration
       t.text :comentario
 
       ##Asociaciones
-      t.belongs_to :factura
+      t.belongs_to :usuario
 
       t.timestamps
     end

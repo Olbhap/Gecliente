@@ -1,0 +1,21 @@
+<%= simple_form_for(@cliente) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nif %>
+    <%= f.input :nombre %>
+    <%= f.input :apellidos %>
+    <%= f.input :nombre_comercial %>
+    <%= f.input :telefono %>
+    <%= f.input :telf_movil %>
+    <%= f.input :fax %>
+    <%= f.input :email %>
+    <%= f.input :web %>
+    <%= f.input :descripcion %>
+    <%= f.input :imagen %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
